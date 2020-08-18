@@ -63,7 +63,7 @@ var scene = viewer.scene;
 var handler;
 var handler2;
 
-
+viewer.scene.highDynamicRange = false;
 
 ///////////////
 
