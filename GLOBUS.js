@@ -53,7 +53,7 @@ return new Cesium.ArcGisMapServerImageryProvider({
 }
 }));
 
-
+/*
 //Clock, rotieren
 // Create a clock that loops on Christmas day 2013 and runs in 1000x real time.
 var clock = new Cesium.Clock({
@@ -65,7 +65,7 @@ var clock = new Cesium.Clock({
   multiplier: 1000, // how much time to advance each tick
   shouldAnimate: true, // Animation on by default
 });
-
+*/
 //CesiumViewer
  viewer = new Cesium.Viewer('cesiumContainer', {
   //CesiumViewer Properties
@@ -83,7 +83,7 @@ var clock = new Cesium.Clock({
 	geocoder: false, //kein Geocoder aktiviert
   //clockViewModel: new Cesium.ClockViewModel(clock), //Zeitanimation
 });
-  viewer.scene.globe.enableLighting = true;
+  //viewer.scene.globe.enableLighting = true;
 
 //add base layer picker
 var baseLayerPicker = new Cesium.BaseLayerPicker('baseLayerPickerContainer', {
