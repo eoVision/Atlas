@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <!-- Use correct character set. -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <!-- Tell IE to use the latest, best version. -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
     <title>Atlas</title>
   
     <style>
@@ -19,9 +12,8 @@
   <h2>Atlas Webmaps Beispiele</h2>
   <h2>CESIUM</h2>
 	<ul>
-		<li><a href="BEISPIELE/clock.html">rotierender Globus</a><p>Der Globus rotiert sich und Schattenwurf der Sonne wird berechnet</p></li>
 		<li><a href="BEISPIELE/3DMarker.html">3D Marker auf Globus</a><span>Dieses Beispiel zeigt verschiedene Möglichkeiten auf, wie Orte auf dem Globus markiert werden können. Es werden Punkte, Polygone und 3D-Modelle verwendet, welche jeweils auch mit Text-Labels versehen werden können. Bei Bewegen der Maus verändert sich der Mauszeiger und weist so darauf hin, dass die Objekte angeklickt werden können. Ein Klick auf ein Objekt auf dem Globus führt direkt auf eine verlinkte Webseite. Sowohl die Position der Objekte auf dem Globus als auch die hinterlegten Links sind im JavaScript-Code manuell erzeugt worden.</span></li>
-		<li><a href="BEISPIELE/geocoder.html">Suchleiste</a></li>
+		<li><a href="BEISPIELE/geocoder.html">Suchleiste</a><p>Anstelle von im Code definierten Geometrien wie in Beispiel 1, werden in diesem Beispiel GeoJSON-Dateien verwendet verwendet (aus QGIS exportiert) um Orte auf dem Globus anzuzeigen. Das Clustering von Polygonen wird von Cesium nicht unterstützt (lediglich Punkte, Billboards und Labels). Um dennoch zur besseren Orientierung eine Cluster-Funktion zu haben, wurde für jedes Polygon der Mittelpunkt (centroid) berechnet und diese Punkte und deren Labels werden geclustert. So kann der Benutzer durch die Nummernanzeige der Cluster und durch die Marker der Punkte übersichtlich alle Polygone auf dem Globus finden. Sowohl die Polygone als auch die Marker und Label der Punkte führen beim Anklicken zu der hinterlegten URL. Der Link zur Webseite für jedes Polygon kann als Attribut in der GeoJSOn-Datei hinterlegt werden und beim Klick abgefragt werden. Zudem sind in diesem Beispiel Zoomstufen eingebaut. So werden sowohl die Punkte als auch die Polygone erst ab einer bestimmten Kamerahöhe eingeblendet.</p></li>
 		<li><a href="BEISPIELE/geojsonCluster.html">Clustering</a></li>
 		<li><a href="BEISPIELE/infoboxLink.html">Infobox bei Klick mit Link</a></li>
 		<li><a href="BEISPIELE/infoboxLinkgeojson.html">Infobox bei Klick mit Link erzeugt aus geoJSON Objekten</a></li>
@@ -29,6 +21,7 @@
 		<li><a href="BEISPIELE/slider.html">Transparenz Slider</a></li>
 		<li><a href="BEISPIELE/swipe.html">Swipe</a></li>
 		<li><a href="BEISPIELE/timeseriesczml.html">Timeseries</a></li>
+		<li><a href="BEISPIELE/clock.html">rotierender Globus</a><p>Der Globus rotiert sich und Schattenwurf der Sonne wird berechnet</p></li>
 		<li><a href="BEISPIELE/GLOBUS.html"><b>GLOBUS</b></a></li>
 	</ul> 
 	<h2>OpenLayers</h2>
