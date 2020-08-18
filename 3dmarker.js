@@ -67,7 +67,7 @@ var rectangle3 = viewer.entities.add({
     outlineColor: Cesium.Color.HOTPINK,
   },
 });
-rectangle3.linkForPick = '../../FERTIGE BEISPIELE/B2_QGIS2Web_Timeline_LasVegas/index.html';
+rectangle3.linkForPick = '../FERTIGE BEISPIELE/B2_QGIS2Web_Timeline_LasVegas/index.html';
 
 
 //___3D Models________________________________________________________
