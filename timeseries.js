@@ -12,8 +12,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
   }),
   fullscreenButton: false,
   timeline: false,
-  animation: false,
-
+  //animation: false,
   //infoBox: true,
   navigationInstructionsInitiallyVisible: false,
   sceneModePicker: true,
