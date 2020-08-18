@@ -52,6 +52,8 @@ return new Cesium.ArcGisMapServerImageryProvider({
   });
 }
 }));
+
+
 //Clock, rotieren
 // Create a clock that loops on Christmas day 2013 and runs in 1000x real time.
 var clock = new Cesium.Clock({
@@ -79,7 +81,7 @@ var clock = new Cesium.Clock({
 	baseLayerPicker: false, //kein Standard-BaseLayer-Picker (wird selbst erstellt)
 	navigationHelpButton: false, //keine Hilfe
 	geocoder: false, //kein Geocoder aktiviert
-  clockViewModel: new Cesium.ClockViewModel(clock), //Zeitanimation
+  //clockViewModel: new Cesium.ClockViewModel(clock), //Zeitanimation
 });
   viewer.scene.globe.enableLighting = true;
 
