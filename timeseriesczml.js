@@ -91,7 +91,7 @@ function globus() {
     }),
     fullscreenButton: false,
     timeline: true,
-    animation: true,
+    animation: false,
     infoBox: false,
     navigationInstructionsInitiallyVisible: false,
     sceneModePicker: true,
