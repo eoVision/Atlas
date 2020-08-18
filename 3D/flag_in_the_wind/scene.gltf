@@ -1,0 +1,301 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 16641,
+      "max": [
+        1.2398999929428101,
+        0.8497999906539917,
+        0
+      ],
+      "min": [
+        -0.98405998945236206,
+        -1,
+        -0.38618001341819763
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 199692,
+      "componentType": 5126,
+      "count": 16641,
+      "max": [
+        0.86140882968902588,
+        0.85105937719345093,
+        0.99999886751174927
+      ],
+      "min": [
+        -0.75678718090057373,
+        -0.69717955589294434,
+        -0.20310224592685699
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 98304,
+      "max": [
+        16640
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 399384,
+      "componentType": 5126,
+      "count": 2080,
+      "max": [
+        1.2812000513076782,
+        1.2914199829101562,
+        1.0302599668502808
+      ],
+      "min": [
+        -1.2702599763870239,
+        -1.2600400447845459,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 424344,
+      "componentType": 5126,
+      "count": 2080,
+      "max": [
+        0.99518442153930664,
+        0.99518442153930664,
+        1
+      ],
+      "min": [
+        -0.99518442153930664,
+        -0.99518442153930664,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 393216,
+      "componentType": 5125,
+      "count": 3156,
+      "max": [
+        2079
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "YouniqueĪdeaStudio (https://sketchfab.com/sinnervoncrawsz)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/flag-in-the-wind-563b39480a6745d599eff1c90a38b47f",
+      "title": "flag in the wind"
+    },
+    "generator": "Sketchfab-4.86.1",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 405840,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 449304,
+      "byteOffset": 405840,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 855144,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Root",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.59985853460000005,
+          0.59985853460000005,
+          0.59985853460000005,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.59999999999999998
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "steag_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "stick_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3,
+        5,
+        7
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        -0.29086000000000006,
+        0.95517000000000007,
+        -0.05519000000000001,
+        0,
+        -0.77110000000000001,
+        -0.19988000000000003,
+        0.60452000000000006,
+        0,
+        0.56639000000000006,
+        0.21839000000000003,
+        0.7946700000000001,
+        0,
+        4.0762500000000008,
+        1.00545,
+        5.9038600000000008,
+        1
+      ],
+      "name": "Lamp"
+    },
+    {
+      "name": "Lamp"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        -0,
+        0,
+        -0.40000000000000002,
+        0,
+        0,
+        0.60000000000000009,
+        0,
+        0,
+        1,
+        0,
+        -0,
+        0,
+        -0.00032000000000000008,
+        0.60292000000000012,
+        1.5399799999999999,
+        1
+      ],
+      "name": "steag"
+    },
+    {
+      "mesh": 0,
+      "name": "steag_0"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        0.015680000000000003,
+        0,
+        0,
+        0,
+        0,
+        0.015680000000000003,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -0.011880000000000003,
+        0.98492999999999997,
+        1
+      ],
+      "name": "stick"
+    },
+    {
+      "mesh": 1,
+      "name": "stick_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+

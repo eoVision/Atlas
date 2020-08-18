@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <title>GLOBUS</title>
+    <!--link to JavaScript documents-->
+    <script src="../Cesium.js"></script>
+    <script src="../GLOBUS.js"></script>
+    <script src="../autocomplete.js"></script>
+    <style>
+      @import url(../widgets.css);
+      html,body,#cesiumContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      /*SEARCHBOX*/
+      #textSearch {
+          position: absolute;
+          z-index: 10001;
+          top: 10px;
+          left: 10px;
+          opacity: 0.8;
+      }
+      .myInput {
+          background-image: url('../clusterimages/search.png'); /* Add a search icon to input */
+          background-position: 10px 12px; /* Position the search icon */
+          background-repeat: no-repeat; /* Do not repeat the icon image */
+          background-size: 20px;
+          font-size: 16px; /* Increase font-size */
+          padding: 12px 0px 12px 40px; /* Add some padding */
+          border: 1px solid #ddd; /* Add a grey border */
+          margin-bottom: 5px; /* Add some space below the input */
+          margin-right: 5px;
+          border-radius: 10px 0px 0px 10px;
+      }
+      /* AUTOCOMPLETE_______________________________________________*/
+      .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+      }
+      input {
+        border: 1px solid transparent;
+        background-color: #f1f1f1;
+        padding: 12px 10px 12px 8px;
+        font-size: 16px;
+        margin-left: 5px;
+        border-radius: 0px 10px 10px 0px;
+
+      }
+      input[type=text] {
+        background-color: #f1f1f1;
+        width: 100%;
+      }
+      input[type=submit] {
+        background-color: DodgerBlue;
+        color: #fff;
+      }
+      .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+      }
+      .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+      }
+      .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+      }
+      .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cesiumContainer"></div>
+    <div id="baseLayerPickerContainer" style="position:absolute;top:5px;right:80px;width:38px;height:38px;"></div>
+    <div id="textSearch">
+      <form action="javascript:textSearch()" class="textbox" autocomplete="off">
+        <div class="autocomplete" style="width:200px; float:left">
+          <input id="searchQuery" type="text" name="myCountry" class="myInput" class="textbox" type="text" value="" placeholder="Stichwortsuche">
+        </div>
+        <div style="width:300px; float:left; margin-left:45px">
+          <input id="button1" type="submit" value="suchen">
+        </div>
+      </form>
+    </div>
+
+    <script>
+      //Main Script
+      globus();
+      var input = document.getElementById("searchQuery");
+      //Timeout, da callback nicht geklappt hat
+      setTimeout(function() { gettags(); }, 1000);
+      setTimeout(function() { autocomplete(document.getElementById("searchQuery"), uniquetags); }, 2000);
+
+      //Enter führt Suche aus
+      input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("button1").click();
+          }
+      });
+    </script>
+  </body>
+</html>

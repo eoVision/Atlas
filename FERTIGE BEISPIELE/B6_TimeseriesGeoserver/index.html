@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OpenLayers Timeseries</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+  </head>
+  <body>
+    <!-- Create map container -->
+    <div id="map" class="map"></div>
+    <div role="group" aria-label="Animation controls">
+
+<!-- Create slider container -->
+    <div class="slidecontainer">
+
+      <input type="range" min="0" max="33" value="0" class="slider" id="myRange">
+    </div>
+    <script>
+
+<!-- Funktion des Play-Buttons -->
+    function task(i) {
+      setTimeout(function(){
+        document.getElementById("myRange").value = i;
+        var evt = new CustomEvent('input');
+        document.getElementById("myRange").dispatchEvent(evt);
+
+      }, 1500 * i);
+    }
+    function play(){
+    for (let i=0; i<dates.length; i++) {
+      task(i);
+
+    }
+    }
+    </script>
+    <button id="startbutton" type="button" onclick="play()">Start</button>
+
+    <p class="displayDate">Date: <span id="date_value"></span></p>
+  </div>
+
+   <script src="js/main.js"></script>
+  </body>
+
+</html>

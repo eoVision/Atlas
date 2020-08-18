@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "tauern3d_bbox",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "link": "../../../FERTIGE BEISPIELE/B1_QGIS2three_HoheTauern/HoheTauern3D18.html" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 12.508023138042214, 47.346216521063965 ], [ 13.401545310961398, 47.348210177982914 ], [ 13.40093209677824, 46.844724915131764 ], [ 12.527241305628227, 46.840905052629701 ], [ 12.508023138042214, 47.346216521063965 ] ] ] ] } }
+]
+}
