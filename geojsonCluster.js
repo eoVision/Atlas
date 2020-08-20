@@ -173,7 +173,7 @@ handlerjson.setInputAction(function(ss) {
 }
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-
+//Aus- und einblenden der Objekte bei Zoom
 var ellipsoid = viewer.scene.globe.ellipsoid;
 var camera = viewer.camera;
 //////////////////////////////

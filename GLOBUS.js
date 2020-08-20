@@ -230,49 +230,31 @@ handlerjson.setInputAction(function(ss) {
 }
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-//Variablen für Zoomstufen
+//Aus- und einblenden der Objekte bei Zoom
 var ellipsoid = viewer.scene.globe.ellipsoid;
 var camera = viewer.camera;
-var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
+//////////////////////////////
+viewer.camera.changed.addEventListener(function() {
+//viewer.camera.moveEnd.addEventListener(function() { //für bessere performance
+     // the camera stopped moving
+     var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
+ 	   //console.log(cameraHeight);
 
-//(beim Zoomen mit Mausrad)
-    var handlerzoom = new Cesium.ScreenSpaceEventHandler(scene.canvas);
-    handlerzoom.setInputAction(function(movement_pc) {
-    var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-    //Zoomstufen definieren
-      if (cameraHeight > 40000000)
-          {
-            zoomset1.show = false;
-            zoomset2.show = false;
-          }
-      else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
-          zoomset1.show = true;
-          zoomset2.show = false;
-        }
-        else if (cameraHeight <= 7000000){
-            zoomset1.show = true;
-            zoomset2.show = true;
-          }
-    }, Cesium.ScreenSpaceEventType.WHEEL); //beim bewegen des Mausrads
+       if (cameraHeight > 40000000)
+           {
+             zoomset1.show = false;
+             zoomset2.show = false;
+           }
+       else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
+           zoomset1.show = true;
+           zoomset2.show = false;
+         }
+         else if (cameraHeight <= 7000000){
+             zoomset1.show = true;
+             zoomset2.show = true;
+           }
+});
 
-//selbes FÜR MOBILGERÄTE (kein Mausrad, sondern Zoomen mit Fingerbewegung)
-    handlerzoom.setInputAction(function(movement_mobile) {
-    var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-     //console.log(cameraHeight); //als Hilfe zur festlegung der richtigen Höhenwerte
-      if (cameraHeight > 40000000)
-          {
-            zoomset1.show = false;
-            zoomset2.show = false;
-          }
-      else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
-          zoomset1.show = true;
-          zoomset2.show = false;
-        }
-        else if (cameraHeight <= 7000000){
-            zoomset1.show = true;
-            zoomset2.show = true;
-          }
-    }, Cesium.ScreenSpaceEventType.PINCH_START); //bei finger pinch
 }; //Ende der globus() funktion
 
 //___________Tags (welche als Vorschläge in der Suchleiste erscheinen) aus Datenquellen (geoJSON) auslesen____________________________________________
