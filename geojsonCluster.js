@@ -1,4 +1,4 @@
-//Funtkion für das gesamte Skript
+//Funktion für das gesamte Skript
 function  globus(){
 
 
@@ -152,6 +152,7 @@ handler.setInputAction(function(movement) {
     var pickedObject = scene.pick(movement.endPosition);
     if (Cesium.defined(pickedObject)) {
         element.style.cursor = 'pointer';
+
     } else {
         element.style.cursor = 'default';
     }
@@ -162,8 +163,13 @@ handler.setInputAction(function(movement) {
 handlerjson = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handlerjson.setInputAction(function(ss) {
     var pickedObject = viewer.scene.pick(ss.position);
-    if (Cesium.defined(pickedObject)) {
-      window.open(pickedObject.id.properties.link, '_self');
+    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { if object is a cluster
+    //if (Cesium.defined(pickedObject) && pickedObject.id.constructor === Array) { //if object is a cluster
+      //window.open(pickedObject.id.properties.link, '_self');
+      //console.log(pickedObject);
+      viewer.flyTo(pickedObject.id, {
+      offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 0),
+    });
 }
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
@@ -178,7 +184,7 @@ var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
     var handlerzoom = new Cesium.ScreenSpaceEventHandler(scene.canvas);
     handlerzoom.setInputAction(function(movement_pc) {
     var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-	   console.log(cameraHeight);
+	   //console.log(cameraHeight);
 
       if (cameraHeight > 40000000)
           {
