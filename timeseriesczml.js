@@ -22,7 +22,7 @@ function globus() {
         coordinates: {
           wsenDegrees: [-180.0, -90.0, 180.0, 0.0],
         },
-        height: 15000,
+        //height: 15000,
         fill: true,
         material: {
           image: {
