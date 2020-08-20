@@ -173,10 +173,12 @@ handler.setInputAction(function(movement) {
         element.style.cursor = 'default';
     }
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+//click on cluster will zoom
 handlerjson = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handlerjson.setInputAction(function(ss) {
     var pickedObject = viewer.scene.pick(ss.position);
-    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { if object is a cluster
+    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { //if object is a cluster
       viewer.flyTo(pickedObject.id, {
       offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 0),
     });
