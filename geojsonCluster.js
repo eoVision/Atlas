@@ -163,7 +163,7 @@ handler.setInputAction(function(movement) {
 handlerjson = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handlerjson.setInputAction(function(ss) {
     var pickedObject = viewer.scene.pick(ss.position);
-    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { if object is a cluster
+    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { //if object is a cluster
     //if (Cesium.defined(pickedObject) && pickedObject.id.constructor === Array) { //if object is a cluster
       //window.open(pickedObject.id.properties.link, '_self');
       //console.log(pickedObject);
@@ -176,6 +176,27 @@ handlerjson.setInputAction(function(ss) {
 
 
 //////////////////////////////
+viewer.camera.changed.addEventListener(function() {
+     // the camera stopped moving
+     var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
+ 	   //console.log(cameraHeight);
+
+       if (cameraHeight > 40000000)
+           {
+             zoomset1.show = false;
+             zoomset2.show = false;
+           }
+       else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
+           zoomset1.show = true;
+           zoomset2.show = false;
+         }
+         else if (cameraHeight <= 7000000){
+             zoomset1.show = true;
+             zoomset2.show = true;
+           }
+
+
+});
 //Variablen für Zoomstufen
 var ellipsoid = viewer.scene.globe.ellipsoid;
 var camera = viewer.camera;
