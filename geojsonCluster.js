@@ -174,9 +174,11 @@ handlerjson.setInputAction(function(ss) {
 }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
 
-
+var ellipsoid = viewer.scene.globe.ellipsoid;
+var camera = viewer.camera;
 //////////////////////////////
 viewer.camera.changed.addEventListener(function() {
+//viewer.camera.moveEnd.addEventListener(function() { //für bessere performance
      // the camera stopped moving
      var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
  	   //console.log(cameraHeight);
@@ -194,53 +196,6 @@ viewer.camera.changed.addEventListener(function() {
              zoomset1.show = true;
              zoomset2.show = true;
            }
-
-
 });
-//Variablen für Zoomstufen
-var ellipsoid = viewer.scene.globe.ellipsoid;
-var camera = viewer.camera;
-var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-//(beim Zoomen mit Mausrad)
-    var handlerzoom = new Cesium.ScreenSpaceEventHandler(scene.canvas);
-    handlerzoom.setInputAction(function(movement_pc) {
-    var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-	   //console.log(cameraHeight);
 
-      if (cameraHeight > 40000000)
-          {
-            zoomset1.show = false;
-            zoomset2.show = false;
-          }
-      else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
-          zoomset1.show = true;
-          zoomset2.show = false;
-        }
-        else if (cameraHeight <= 7000000){
-            zoomset1.show = true;
-            zoomset2.show = true;
-          }
-
-    }, Cesium.ScreenSpaceEventType.WHEEL);
-
-//FÜR MOBILGERÄTE (kein Mausrad, sondern Zommen mit zwei Fingern)
-    handlerzoom.setInputAction(function(movement_mobile) {
-    var cameraHeight = ellipsoid.cartesianToCartographic(camera.position).height;
-     console.log(cameraHeight);
-
-      if (cameraHeight > 40000000)
-          {
-            zoomset1.show = false;
-            zoomset2.show = false;
-          }
-      else if (cameraHeight <= 40000000 && cameraHeight > 7000000){
-          zoomset1.show = true;
-          zoomset2.show = false;
-        }
-        else if (cameraHeight <= 7000000){
-            zoomset1.show = true;
-            zoomset2.show = true;
-          }
-
-    }, Cesium.ScreenSpaceEventType.PINCH_START);
 }
