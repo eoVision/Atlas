@@ -1,4 +1,4 @@
-
+//TESTS, funktioniert nicht
 
 function globus() {
 
@@ -9,14 +9,14 @@ function globus() {
       name: "Ozon",
       version: "1.0",
       clock: {
-        interval: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z",
-        currentTime: "2000-01-01T00:00:00Z",
-        multiplier: 1300000,
+        interval: "1999-11-01T00:00:00Z/2001-03-01T00:00:00Z", //Zeitstrahl Interval
+        currentTime: "2000-01-01T00:00:00Z", //Startzeit
+        multiplier: 1300000, //Geschwindigkeit
     },
     },
     {
       id: "textureRectangle",
-      name: "rectangle with image, above surface",
+      name: "Ozon",
       availability: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z",
       rectangle: {
         coordinates: {
@@ -28,7 +28,7 @@ function globus() {
           image: {
             image: [
                               {
-                                interval: "2000-01-01T00:00:00Z/2000-02-01T00:00:00Z",
+                                interval: "2000-01-01T00:00:00Z/2000-02-01T00:00:00Z", //Zeitintervall wann dieses Bild sichtbar ist
                                 uri: "../ozon/01jan.png"
                               },
                               {
@@ -118,10 +118,9 @@ function globus() {
   scene.backgroundColor = Cesium.Color.BLACK;
   viewer.scene.globe.baseColor = Cesium.Color.BLACK;
 
-
+//nur Jahr und Monat auf dem Zeitstrahl anzeigen
   viewer.timeline.makeLabel = function(date) {
     var gregorianDate = Cesium.JulianDate.toGregorianDate(date);
-
     return gregorianDate.month +"/"+gregorianDate.year;
   };
 };

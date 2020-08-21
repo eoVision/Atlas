@@ -65,7 +65,7 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
 			navigationInstructionsInitiallyVisible: false,
 			sceneModePicker: true,
 			baseLayerPicker: false,
-      imageryProviderViewModels: imageryViewModels,
+      imageryProviderViewModels: imageryViewModels, //
 			homeButton: true,
 			selectionIndicator: false,
 			navigationHelpButton: false,

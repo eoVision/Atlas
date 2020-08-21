@@ -1,3 +1,4 @@
+//DOKUMENT FÜR TESTS, IGNORIERBAR
 
 function  globus(){
 

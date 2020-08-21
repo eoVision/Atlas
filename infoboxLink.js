@@ -51,7 +51,7 @@ var alps_rectangle = viewer.entities.add({
   </p>\
   <p>\
     <a target="_blank" href="http://www.google.de">Anwendung starten</a>\
-  </p>',
+  </p>', //HTML
   rectangle: {
     coordinates: Cesium.Rectangle.fromDegrees(5.623442313,45.41767801,13.671979258,48.295864634), //west(-180;180),south(-90;90),east(-180;180),north(-90;90)
     fill:true,

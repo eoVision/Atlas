@@ -2,10 +2,6 @@ var layers = [];
 
 function globus() {
 
-
-
-
-
 var viewer = new Cesium.Viewer("cesiumContainer", {
   imageryProvider: new Cesium.TileMapServiceImageryProvider({
     url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
@@ -31,7 +27,7 @@ var viewModel = {
   layers: layers,
 
 };
-
+//Alle Bilder der Zeitreihe +knockoutJS
 Cesium.knockout.track(viewModel);
 /////////////////////Januar
 var jan = imageryLayers.addImageryProvider(

@@ -53,19 +53,7 @@ return new Cesium.ArcGisMapServerImageryProvider({
 }
 }));
 
-/*
-//Clock, rotieren
-// Create a clock that loops on Christmas day 2013 and runs in 1000x real time.
-var clock = new Cesium.Clock({
-  startTime: Cesium.JulianDate.fromIso8601("2013-12-25"),
-  currentTime: Cesium.JulianDate.fromIso8601("2013-12-25"),
-  stopTime: Cesium.JulianDate.fromIso8601("2013-12-26"),
-  clockRange: Cesium.ClockRange.LOOP_STOP, // loop when we hit the end time
-  clockStep: Cesium.ClockStep.SYSTEM_CLOCK_MULTIPLIER,
-  multiplier: 1000, // how much time to advance each tick
-  shouldAnimate: true, // Animation on by default
-});
-*/
+
 //CesiumViewer
  viewer = new Cesium.Viewer('cesiumContainer', {
   //CesiumViewer Properties
@@ -290,7 +278,6 @@ i++;
 };
 
 //___________Suchleiste____________________________________________
-
 function textSearch() {
   var searchQuery = document.getElementById('searchQuery').value.toUpperCase();
   var dataSources = viewer.dataSources._dataSources;
@@ -300,7 +287,7 @@ function textSearch() {
   while (i < dataSources.length) { //für alle Datenquellen
     var entityCollectionArray = dataSources[i]._entityCollection._entities._array;
     var j = 0;
-    while (j < entityCollectionArray.length) { //Für jedes Objekt der datenquelle
+    while (j < entityCollectionArray.length) { //Für jedes Objekt der Datenquelle
       if (entityCollectionArray[j]._properties._tags._value !== void 0 && entityCollectionArray[j]._name !== void 0) { //wenn tag und name existieren
 
         var name = entityCollectionArray[j]._name;

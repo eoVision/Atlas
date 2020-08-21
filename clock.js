@@ -1,5 +1,5 @@
 function globus() {
-  // Create a clock that loops on Christmas day 2013 and runs in 4000x real time.
+  // Create a clock that loops on Christmas day 2013 and runs in 1000x real time.
   var clock = new Cesium.Clock({
     startTime: Cesium.JulianDate.fromIso8601("2013-12-25"),
     currentTime: Cesium.JulianDate.fromIso8601("2013-12-25"),
