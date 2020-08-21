@@ -11,26 +11,95 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
     <title>TimeSeries</title>
+    <!--Time Control-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <script src="../Cesium.js"></script>
     <script src="../timeseriesczml.js"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
+
+
+
     <style>
       @import url(../widgets.css);
-      html,
-      body,
-      #cesiumContainer {
+      html,body {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         overflow: hidden;
       }
-
-
+      #cesiumContainer {
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #playback-controls{
+        right: 90px;
+        top: 7px;
+      }
+      #playback-controls div, #playback-controls div div{
+        margin:auto;padding:0;
+        list-style:none;
+        }
+      #playback-controls div div{
+        display:inline-block
+      }
+      .time-control{
+        border-radius:4px;
+        z-index:1000
+      }
+      .time-control a{
+        width:30px;
+        height:30px;
+        line-height:30px;
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        color:white;
+        }
+      #showYear {
+        right: 145px;
+        text-align: center;
+        position: absolute;
+        line-height:30px;
+        margin: auto;
+        border: 1px solid #fff;
+        width:100px;
+        border-radius: 4px;
+        background-color: #f0f0f0;
+        z-index: 1000;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
-    <div id="cesiumContainer"></div>
+    <div id="cesiumContainer">
+
+    </div>
+    <div class = "cesium-viewer-toolbar" id="playback-controls">
+    <div>
+      <div id="showYear"><p><b>Monat</b></p></div>
+      <div class="cesium-button time-control">
+        <a id="pb-reset"  title="Restart"><span class="glyphicon glyphicon-refresh"></span></a>
+      </div>
+      <div class="cesium-button time-control">
+        <a id="pb-play" title="Play/Pause"><span class="glyphicon glyphicon-play"></span></a>
+      </div>
+      <div class="cesium-button time-control">
+        <a id="pb-slow" title="Langsamer"><span class="glyphicon glyphicon-step-forward"></span></a>
+      </div>
+      <div class="cesium-button time-control">
+        <a id="pb-fast" title="Schneller"><span class="glyphicon glyphicon-fast-forward"></span></a>
+      </div>
+
+    </div>
+    </div>
+
+
 
     <script>
       globus();

@@ -9,7 +9,7 @@ function globus() {
       name: "Ozon",
       version: "1.0",
       clock: {
-        interval: "1999-11-01T00:00:00Z/2001-03-01T00:00:00Z", //Zeitstrahl Interval
+        interval: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z", //Zeitstrahl Interval
         currentTime: "2000-01-01T00:00:00Z", //Startzeit
         multiplier: 1300000, //Geschwindigkeit
     },
@@ -118,9 +118,52 @@ function globus() {
   scene.backgroundColor = Cesium.Color.BLACK;
   viewer.scene.globe.baseColor = Cesium.Color.BLACK;
 
-//nur Jahr und Monat auf dem Zeitstrahl anzeigen
-  viewer.timeline.makeLabel = function(date) {
-    var gregorianDate = Cesium.JulianDate.toGregorianDate(date);
-    return gregorianDate.month +"/"+gregorianDate.year;
-  };
+
+
+  var clockViewModel;
+  var animationViewModel;
+  clockViewModel = new Cesium.ClockViewModel(viewer.clock);
+  animationViewModel = new Cesium.AnimationViewModel(clockViewModel);
+  //nur Jahr und Monat auf dem Zeitstrahl anzeigen
+    viewer.timeline.makeLabel = function(date) {
+      var gregorianDate = Cesium.JulianDate.toGregorianDate(date);
+      return gregorianDate.day+"/"+gregorianDate.month +"/"+gregorianDate.year;
+    };
+
+  viewer.clock.shouldAnimate = false;
+
+var factor = 1;
+  $("#pb-play").click(function(){
+    animationViewModel.pauseViewModel.command();
+    $("#pb-play span").toggleClass("glyphicon-pause glyphicon-play");
+  })
+
+  $("#pb-reset").click(function(){
+    clockViewModel.currentTime = clockViewModel.startTime;
+    factor = 1;
+    clockViewModel.multiplier = 1300000; //standard speed
+  })
+
+  $("#pb-slow").click(function(){
+    factor = factor + 0.5;
+    clockViewModel.multiplier = clockViewModel.multiplier / factor;
+  })
+
+  $("#pb-fast").click(function(){
+    factor = factor + 0.5;
+    clockViewModel.multiplier = factor * clockViewModel.multiplier;
+  })
+
+  const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni","Juli", "August", "September", "Oktober", "November", "Dezember"];
+
+  viewer.clock.onTick.addEventListener(function(event) {
+    var jd = event.currentTime.dayNumber;
+    var millis = (jd - 2440587.5) * 86400000;
+    var dateLocal = new Date(millis);
+    //month = dateLocal.getMonth();
+    document.getElementById("showYear").innerHTML = monthNames[dateLocal.getMonth()];
+  });
+
+
+
 };
