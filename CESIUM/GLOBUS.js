@@ -1,3 +1,7 @@
+//ANMERKUNG: Damit die in den Inforboxen enthaltenen Links funktionieren muss eine Änderung in der Cesium.js-Datei getätigt werden.
+//Folgende Code-Passage muss gelöscht werden, damit Skripte in der über den Link augerufenen Seite ausgeführt werden dürfen und die Seiten somit richtig funktionieren:
+// c.setAttribute(“sandbox”, “allow-same-origin allow-popups allow-forms”),
+
 var viewer;
 
 //___________Cesium Globus und Layer____________________________________________
