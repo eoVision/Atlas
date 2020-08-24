@@ -12,7 +12,7 @@ imageryProvider: new Cesium.OpenStreetMapImageryProvider({
 }),
 
 //CesiumViewer Properties/*
-			fullscreenButton: false,
+			fullscreenButton: true,
 			timeline: false,
 			animation: false,
 			infoBox: false,
