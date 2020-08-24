@@ -20,7 +20,7 @@ function globus() {
       availability: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z",
       rectangle: {
         coordinates: {
-          wsenDegrees: [-180.0, -90.0, 180.0, 0.0],
+          wsenDegrees: [-180.0, -90.0, 180.0, 0.0], //Bilddimensionen
         },
         //height: 15000,
         fill: true,

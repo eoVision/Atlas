@@ -41,7 +41,7 @@ var alps_rectangle = viewer.entities.add({
     material: Cesium.Color.RED.withAlpha(0.5),
   },
 });
-alps_rectangle.linkForPick = '../FERTIGE BEISPIELE/B5_QGIS2Web_SwipeBar_Alps/index.html';
+alps_rectangle.linkForPick = '../../OpenLayers/B5_QGIS2Web_SwipeBar_Alps/index.html';
 
 
 var rectangle2 = viewer.entities.add({
@@ -55,7 +55,7 @@ var rectangle2 = viewer.entities.add({
     outlineColor: Cesium.Color.GOLD,
   },
 });
-rectangle2.linkForPick = '../FERTIGE BEISPIELE/B3_QGIS2Web_SwipeGitterKoodinaten/index.html';
+rectangle2.linkForPick = '../../OpenLayers/B3_QGIS2Web_SwipeGitterKoodinaten/index.html';
 
 var rectangle3 = viewer.entities.add({
   rectangle: {
@@ -67,7 +67,7 @@ var rectangle3 = viewer.entities.add({
     outlineColor: Cesium.Color.HOTPINK,
   },
 });
-rectangle3.linkForPick = '../FERTIGE BEISPIELE/B2_QGIS2Web_Timeline_LasVegas/index.html';
+rectangle3.linkForPick = '../../OpenLayers/B2_QGIS2Web_Timeline_LasVegas/index.html';
 
 
 //___3D Models________________________________________________________
