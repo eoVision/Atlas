@@ -340,6 +340,7 @@ if(decider.checked){
 
         var name = entityCollectionArray[j]._name;
         var tags = entityCollectionArray[j]._properties._tags._value;
+        entityCollectionArray[j].show = true;
         //wenn der Suchtext im Array der namen oder tags enthalten ist
         var f;
         for (f=0; f<filterbegriffe.length; f++){

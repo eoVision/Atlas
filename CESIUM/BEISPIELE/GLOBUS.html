@@ -26,10 +26,6 @@
       }
       /*SEARCHBOX*/
       #textSearch {
-          position: absolute;
-          z-index: 10001;
-          top: 10px;
-          left: 10px;
           opacity: 0.8;
       }
       .myInput {
@@ -96,9 +92,7 @@
       /*Filter*/
       #filterauswahl{
         background-color: rgba(255, 255, 255,0.6);
-        position: absolute;
-        top:60px;
-        left: 15px;
+        margin-bottom: 5px;
         border-radius: 5px;
         padding: 10px;
         line-height: 140%;
@@ -110,6 +104,19 @@
     <div id="cesiumContainer"></div>
     <!-- LayerPicker-->
     <div id="baseLayerPickerContainer" style="position:absolute;top:5px;right:80px;width:38px;height:38px;"></div>
+    <div style="top:8px;left: 8px;position:absolute">
+    <!-- Filter Checkboxen-->
+    <div id="filterauswahl" >
+      <div><span style="font-size: 0.8em;font-family: sans-serif">NACH KATEGORIEN FILTERN:</span></div>
+      <div>
+        <input type="checkbox" name"Klima" id="KlimaFilter" onclick="Filter('Klima', 'KlimaFilter')"><label for="KlimaFilter">Klima</label>
+        <input type="checkbox" name"Vegetation" id="VegatationFilter" onclick="Filter('Vegetation', 'VegatationFilter')"><label for="VegatationFilter">Vegetation</label>
+      </div>
+      <div>
+        <input type="checkbox" name"Afrika" id="AfrikaFilter" onclick="Filter('Afrika', 'AfrikaFilter')"><label for="AfrikaFilter">Afrika</label>
+        <input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Beispiele</label>
+      </div>
+    </div>
     <!-- Suchfeld-->
     <div id="textSearch">
       <form action="javascript:textSearch()" class="textbox" autocomplete="off">
@@ -121,14 +128,8 @@
         </div>
       </form>
     </div>
-    <!-- Filter Checkboxen-->
-    <div id="filterauswahl" >
-      <div><span style="font-size: 0.8em;font-family: sans-serif">NACH KATEGORIEN FILTERN:</span></div>
-      <div><input type="checkbox" name"Afrika" id="AfrikaFilter" onclick="Filter('Afrika', 'AfrikaFilter')"><label for="AfrikaFilter">Afrika</label></div>
-      <div><input type="checkbox" name"Klima" id="KlimaFilter" onclick="Filter('Klima', 'KlimaFilter')"><label for="KlimaFilter">Klima</label></div>
-      <div><input type="checkbox" name"Vegetation" id="VegatationFilter" onclick="Filter('Vegetation', 'VegatationFilter')"><label for="VegatationFilter">Vegetation</label></div>
-      <div><input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Beispiele</label></div>
-    </div>
+  </div>
+
 
     <script>
       //Main Script
