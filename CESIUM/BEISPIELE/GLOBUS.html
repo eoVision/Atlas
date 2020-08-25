@@ -27,6 +27,9 @@
       /*SEARCHBOX*/
       #textSearch {
           opacity: 0.8;
+          top:102px;
+          left:8px;
+          position:absolute
       }
       .myInput {
           background-image: url('../clusterimages/search.png'); /* Add a search icon to input */
@@ -95,7 +98,10 @@
         border-radius: 5px;
         padding: 10px;
         line-height: 140%;
-        width:230px;
+        width:215px;
+        top:8px;
+        left:8px;
+        position:absolute
       }
       label{
         font-size: 14px;
@@ -107,7 +113,6 @@
     <div id="cesiumContainer"></div>
     <!-- LayerPicker-->
     <div id="baseLayerPickerContainer" style="position:absolute;top:5px;right:80px;width:38px;height:38px;"></div>
-    <div style="top:8px;left: 8px;position:absolute">
     <!-- Filter Checkboxen-->
     <div id="filterauswahl" >
       <div><span style="font-size: 12px;font-family: sans-serif">NACH KATEGORIEN FILTERN:</span></div>
@@ -123,7 +128,7 @@
     <!-- Suchfeld-->
     <div id="textSearch">
       <form action="javascript:textSearch()" class="textbox" autocomplete="off">
-        <div class="autocomplete" style="width:200px; float:left">
+        <div class="autocomplete" style="width:120px; float:left">
           <input id="searchQuery" type="text" name="myCountry" class="myInput" class="textbox" type="text" value="" placeholder="Stichwortsuche">
         </div>
         <div style="width:300px; float:left; margin-left:45px">
@@ -131,7 +136,7 @@
         </div>
       </form>
     </div>
-  </div>
+
 
 
     <script>
