@@ -286,13 +286,12 @@ function textSearch() {
   var searchQuery = document.getElementById('searchQuery').value.toUpperCase();
   var dataSources = viewer.dataSources._dataSources;
   var treffer = [];
-
   var i = 0;
   while (i < dataSources.length) { //für alle Datenquellen
     var entityCollectionArray = dataSources[i]._entityCollection._entities._array;
     var j = 0;
     while (j < entityCollectionArray.length) { //Für jedes Objekt der Datenquelle
-      if (entityCollectionArray[j]._properties._tags._value !== void 0 && entityCollectionArray[j]._name !== void 0) { //wenn tag und name existieren
+      if (entityCollectionArray[j]._properties._tags._value !== void 0 && entityCollectionArray[j]._name !== void 0 ) { //wenn tag und name existieren UND das Objekt sichtbar ist (nicht gefiltert wurde)
 
         var name = entityCollectionArray[j]._name;
         var tags = entityCollectionArray[j]._properties._tags._value;
@@ -312,4 +311,102 @@ i++;
   viewer.flyTo(treffer, {
   offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 20000000),
   });
+};
+
+
+
+
+
+//___________FILTER____________________________________________
+var filterbegriffe = [];
+function Filter(filterbegriff, filterId) {
+  filterbegriff = filterbegriff.toUpperCase(); //Umwandlung des Filterbegriffs in Großbuchstaben
+  var dataSources = viewer.dataSources._dataSources;
+  var treffer = [];
+
+  //if checkbox gets checked
+var decider = document.getElementById(filterId);
+if(decider.checked){
+  filterbegriffe.push(filterbegriff); //Filter zur Liste hinzufügen
+  console.log("checked");
+  console.log(filterbegriffe);
+
+  var i = 0;
+  while (i < dataSources.length) { //für alle Datenquellen
+    var entityCollectionArray = dataSources[i]._entityCollection._entities._array;
+    var j = 0;
+    while (j < entityCollectionArray.length) { //Für jedes Objekt der Datenquelle
+      if (entityCollectionArray[j]._properties._tags._value !== void 0 && entityCollectionArray[j]._name !== void 0) { //wenn tag und name existieren
+
+        var name = entityCollectionArray[j]._name;
+        var tags = entityCollectionArray[j]._properties._tags._value;
+        //wenn der Suchtext im Array der namen oder tags enthalten ist
+        var f;
+        for (f=0; f<filterbegriffe.length; f++){
+        if (name.toUpperCase().indexOf(filterbegriffe[f]) != -1 || tags.toUpperCase().indexOf(filterbegriffe[f]) != -1 && entityCollectionArray[j].show == true) { //wenn Begriff in Array ist
+
+          entityCollectionArray[j].show = true; //Objekt sichtbar setzen
+          treffer.push(entityCollectionArray[j]);
+        } else {
+
+          entityCollectionArray[j].show = false; //Objekt unsichtbar setzen
+        }
+      }
+      }
+      j++;
+    }
+i++;
+}
+  //Kamera fliegt zu Treffern
+  viewer.flyTo(treffer, {
+  offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 20000000),
+  });
+
+
+
+}
+  //if checkbox gets unchecked
+else {
+    console.log("unchecked");
+    var index = filterbegriffe.indexOf(filterbegriff);
+    filterbegriffe.splice(index, 1);
+    console.log(filterbegriffe);
+
+    var i = 0;
+    while (i < dataSources.length) { //für alle Datenquellen
+      var entityCollectionArray = dataSources[i]._entityCollection._entities._array;
+      var j = 0;
+      while (j < entityCollectionArray.length) { //Für jedes Objekt der Datenquelle
+        if (entityCollectionArray[j]._properties._tags._value !== void 0 && entityCollectionArray[j]._name !== void 0) { //wenn tag und name existieren
+
+          var name = entityCollectionArray[j]._name;
+          var tags = entityCollectionArray[j]._properties._tags._value;
+          entityCollectionArray[j].show = true;
+          //wenn der Suchtext im Array der namen oder tags enthalten ist
+          var f;
+
+          for (f=0; f<filterbegriffe.length; f++){
+          if (name.toUpperCase().indexOf(filterbegriffe[f]) != -1 || tags.toUpperCase().indexOf(filterbegriffe[f]) != -1 && entityCollectionArray[j].show == true) { //wenn Begriff in Array ist
+
+            entityCollectionArray[j].show = true; //Objekt sichtbar setzen
+            treffer.push(entityCollectionArray[j]);
+          } else {
+
+            entityCollectionArray[j].show = false; //Objekt unsichtbar setzen
+          }
+        }
+        }
+        j++;
+      }
+  i++;
+  }
+
+    //Kamera fliegt zu Treffern
+    viewer.flyTo(treffer, {
+    offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 20000000),
+    });
+  }
+//customStyle();
+
+
 };
