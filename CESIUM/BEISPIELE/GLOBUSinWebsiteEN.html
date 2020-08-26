@@ -13,7 +13,7 @@
     <title>GLOBUS</title>
     <!--link to JavaScript documents-->
     <script src="../Cesium.js"></script>
-    <script src="../GLOBUS.js"></script>
+    <script src="../GLOBUS_EN.js"></script>
     <script src="../autocomplete.js"></script>
     <style>
       @import url(../widgets.css);
@@ -155,39 +155,39 @@
   <body>
 
     <div id="top"><span>Interaktiver Webatlas</span></div>
-    <div style="text-align:center;color:#F13C20"><span><b>Sprache ändern: DE |	<a style="color:#F13C20" href="GLOBUSinWebsiteEN.html">EN</a></b></span></div>
-    <div id ="desc"><p>Text in Deutsch. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+    <div style="text-align:center;color:#F13C20"><span><b>Sprache ändern: <a style="color:#F13C20" href="GLOBUSinWebsite.html">DE</a> |	EN</b></span></div>
+    <div id ="desc"><p>English text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
     <div id="midleft"></div>
     <div id="cesiumContainer">
         <!-- LayerPicker-->
         <div id="baseLayerPickerContainer" style="position:absolute;top:5px;right:80px;width:38px;height:38px;z-index:999999"></div>
         <!-- Filter Checkboxen-->
         <div id="filterauswahl" >
-          <div><span style="font-size: 12px;font-family: sans-serif">NACH KATEGORIEN FILTERN:</span></div>
+          <div><span style="font-size: 12px;font-family: sans-serif">FILTER FOR CATEGORIES:</span></div>
           <div>
-            <input type="checkbox" name"Klima" id="KlimaFilter" onclick="Filter('Klima', 'KlimaFilter')"><label for="KlimaFilter">Klima</label>
+            <input type="checkbox" name"Klima" id="KlimaFilter" onclick="Filter('Klima', 'KlimaFilter')"><label for="KlimaFilter">Climate</label>
             <input type="checkbox" name"Vegetation" id="VegatationFilter" onclick="Filter('Vegetation', 'VegatationFilter')"><label for="VegatationFilter">Vegetation</label>
           </div>
           <div>
-            <input type="checkbox" name"Afrika" id="AfrikaFilter" onclick="Filter('Afrika', 'AfrikaFilter')"><label for="AfrikaFilter">Afrika</label>
-            <input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Beispiele</label>
+            <input type="checkbox" name"Afrika" id="AfrikaFilter" onclick="Filter('Afrika', 'AfrikaFilter')"><label for="AfrikaFilter">Africa</label>
+            <input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Exmaples</label>
           </div>
         </div>
         <!-- Suchfeld-->
         <div id="textSearch">
           <form action="javascript:textSearch()" class="textbox" autocomplete="off">
             <div class="autocomplete" style="width:120px; float:left">
-              <input id="searchQuery" type="text" name="myCountry" class="myInput" class="textbox" type="text" value="" placeholder="Stichwortsuche">
+              <input id="searchQuery" type="text" name="myCountry" class="myInput" class="textbox" type="text" value="" placeholder="Search">
             </div>
             <div style="width:300px; float:left; margin-left:45px">
-              <input id="button1" type="submit" value="suchen">
+              <input id="button1" type="submit" value="search">
             </div>
           </form>
         </div>
 
     </div>
     <div id="midright"></div>
-    <div id="bottom"><p>Text in Deutsch. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl vel. Quis enim lobortis scelerisque fermentum dui faucibus in ornare. Risus nec feugiat in fermentum posuere. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Semper viverra nam libero justo laoreet sit amet cursus sit. Tellus id interdum velit laoreet id donec ultrices tincidunt. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. In ornare quam viverra orci sagittis eu volutpat odio facilisis. Feugiat in ante metus dictum at. Amet massa vitae tortor condimentum lacinia. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Bibendum enim facilisis gravida neque convallis a. Tellus id interdum velit laoreet. Diam sollicitudin tempor id eu nisl nunc.</p></div>
+    <div id="bottom"><p>English text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl vel. Quis enim lobortis scelerisque fermentum dui faucibus in ornare. Risus nec feugiat in fermentum posuere. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Semper viverra nam libero justo laoreet sit amet cursus sit. Tellus id interdum velit laoreet id donec ultrices tincidunt. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. In ornare quam viverra orci sagittis eu volutpat odio facilisis. Feugiat in ante metus dictum at. Amet massa vitae tortor condimentum lacinia. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit. Bibendum enim facilisis gravida neque convallis a. Tellus id interdum velit laoreet. Diam sollicitudin tempor id eu nisl nunc.</p></div>
 
 
 
