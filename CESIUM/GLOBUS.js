@@ -110,7 +110,8 @@ polygons.then(function (dataSource){
     var entity = entities[i];
     entity.parent= zoomset2;
     //Bechreibung für Infobox, als HTML
-    entity.description = "<p>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</p>\
+    console.log(entity.properties.beschreibung);
+    entity.description = "<p>"+ entity.properties.beschreibung +"Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</p>\
     <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p>Dieser <a target='_blank' href='" + entity.properties.link + "'>Link</a> wird ebenso aus der GeoJSON-Datei für jedes Objekt abgefragt.</p>";
   }
 });
