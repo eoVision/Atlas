@@ -109,9 +109,8 @@ polygons.then(function (dataSource){
   var entities = dataSource.entities.values;
   for (var i = 0; i < entities.length; i++){
     var entity = entities[i];
-    entity.parent= zoomset2;
+    entity.parent= zoomset2; //zum Zoomset hinzufügen
     //Bechreibung für Infobox, als HTML
-    console.log(entity.properties.beschreibung);
     entity.description = "<p>"+ entity.properties.beschreibung +" <i>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</i></p>\
     <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p><a target='_blank' href='" + entity.properties.link + "'>Link zur Anwendung</a></p>";
   }
@@ -124,7 +123,7 @@ centroids.then(function (dataSource){
   var entities = dataSource.entities.values;
   for (var i = 0; i < entities.length; i++){
     var entity = entities[i];
-    entity.parent= zoomset1,
+    entity.parent= zoomset1, //zum Zoomset hinzufügen
     //Symbol
     entity.billboard.image =  "../clusterimages/pin.png";
     entity.billboard.height = 30;//benötigt, damit am Anfang automatisch geclustered wird, bug
