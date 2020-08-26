@@ -62,6 +62,7 @@ return new Cesium.ArcGisMapServerImageryProvider({
  viewer = new Cesium.Viewer('cesiumContainer', {
   //CesiumViewer Properties
 	fullscreenButton: true,  //Button für Vollbild
+  fullscreenElement: "cesiumContainer", //definiert welches Element bei Klick als Vollbild angezeigt werden soll
   infoBox: true,  //Infobox, welche erscheint wenn man auf ein Objekt klickt
   sceneModePicker: true, //2D/3D Wechsler
   homeButton: true, //Button für Home-Kameraposition
@@ -111,8 +112,8 @@ polygons.then(function (dataSource){
     entity.parent= zoomset2;
     //Bechreibung für Infobox, als HTML
     console.log(entity.properties.beschreibung);
-    entity.description = "<p>"+ entity.properties.beschreibung +"Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</p>\
-    <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p>Dieser <a target='_blank' href='" + entity.properties.link + "'>Link</a> wird ebenso aus der GeoJSON-Datei für jedes Objekt abgefragt.</p>";
+    entity.description = "<p>"+ entity.properties.beschreibung +" <i>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</i></p>\
+    <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p><a target='_blank' href='" + entity.properties.link + "'>Link zur Anwendung</a></p>";
   }
 });
 
@@ -137,8 +138,8 @@ centroids.then(function (dataSource){
       pixelOffset: new Cesium.Cartesian2(0,-50),
     };
     //Beschreibung bei Klick
-    entity.description = "<p>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</p>\
-    <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p>Dieser <a target='_blank' href='" + entity.properties.link + "'>Link</a> wird ebenso aus der GeoJSON-Datei für jedes Objekt abgefragt.</p>";
+    entity.description = "<p>"+ entity.properties.beschreibung +" <i>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</i></p>\
+    <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p><a target='_blank' href='" + entity.properties.link + "'>Link zur Anwendung</a></p>";
   }
 });
 
