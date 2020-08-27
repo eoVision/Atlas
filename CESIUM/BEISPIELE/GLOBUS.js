@@ -408,7 +408,7 @@ else {
     offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 20000000),
     });
   }
-//customStyle();
+
 
 
 };
