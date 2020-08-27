@@ -100,7 +100,7 @@ var zoomset2 = entities.add(new Cesium.Entity());
 zoomset2.show = false;
 
 //Gebietspolygone zur Karte hinzufügen
-var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/polygonsEN.geojson", {
+var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/polygonsEN.geojson", {
   stroke: Cesium.Color.WHITE,
   fill: Cesium.Color.WHITE.withAlpha(0.1),
 })));
@@ -117,7 +117,7 @@ polygons.then(function (dataSource){
 });
 
 //Centroids (Mittelpunkte der Polygone) laden
-centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/centroidsEN.geojson"));
+centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/centroidsEN.geojson"));
 //Eigenschaften für jeden Punkt in "Centroids" anpassen. Label, Beschreibung und Zoomset hinzufügen
 centroids.then(function (dataSource){
   var entities = dataSource.entities.values;

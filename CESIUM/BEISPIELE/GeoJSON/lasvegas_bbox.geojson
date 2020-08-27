@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "lasvegas_bbox",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "link":"../../../FERTIGE BEISPIELE/B2_QGIS2Web_Timeline_LasVegas/index.html" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -115.60589123243183, 36.461424220994523 ], [ -114.654276025007462, 36.446514954776418 ], [ -114.671701878201375, 35.86011776617088 ], [ -115.616176108897719, 35.874915462369493 ], [ -115.60589123243183, 36.461424220994523 ] ] ] ] } }
-]
-}

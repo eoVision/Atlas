@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "tauern_bbox",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "link": "../../../FERTIGE BEISPIELE/B3_QGIS2Web_SwipeGitterKoodinaten/index.html" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 12.128233205856933, 47.260210914804702 ], [ 12.308761167738917, 47.261937791474104 ], [ 12.312551929271642, 47.066964784693532 ], [ 12.132610167626677, 47.065213811749715 ], [ 12.128233205856933, 47.260210914804702 ] ] ] ] } }
-]
-}

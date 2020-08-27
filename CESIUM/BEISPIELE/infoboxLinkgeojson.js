@@ -47,7 +47,7 @@ var scene = viewer.scene;
 var handler;
 
 //polygons
-var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/polygons.geojson", {
+var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/polygons.geojson", {
   stroke: Cesium.Color.INDIANRED,
   fill: Cesium.Color.INDIANRED .withAlpha(0.1),
 })));
@@ -65,7 +65,7 @@ polygons.then(function (dataSource){
 /////////////////
 
 //Centroids laden
-centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/centroids.geojson"));
+centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/centroids.geojson"));
 //Eigenschaften für jeden Punkt in "Centroids" anpassen
 centroids.then(function (dataSource){
   var entities = dataSource.entities.values;
