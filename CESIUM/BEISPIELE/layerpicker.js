@@ -7,7 +7,7 @@ var imageryViewModels = [];
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Sentinel-2',
-iconUrl: Cesium.buildModuleUrl('clusterimages/sentinel_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/sentinel_icon.png'),
 //category: "test",
 creationFunction: function () {
 return new Cesium.UrlTemplateImageryProvider({
@@ -19,7 +19,7 @@ return new Cesium.UrlTemplateImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'OSM',
-iconUrl: Cesium.buildModuleUrl('clusterimages/osm_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/osm_icon.png'),
 creationFunction: function () {
 return new Cesium.OpenStreetMapImageryProvider({
     url:'//a.tile.openstreetmap.org/',
@@ -29,7 +29,7 @@ return new Cesium.OpenStreetMapImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Watercolor',
-iconUrl: Cesium.buildModuleUrl('clusterimages/watercolor_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/watercolor_icon.png'),
 creationFunction: function () {
 return new Cesium.OpenStreetMapImageryProvider({
     url: 'http://tile.stamen.com/watercolor',
@@ -39,7 +39,7 @@ return new Cesium.OpenStreetMapImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Natural Earth',
-iconUrl: Cesium.buildModuleUrl('clusterimages/esri_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/esri_icon.png'),
 creationFunction: function () {
 return new Cesium.ArcGisMapServerImageryProvider({
     url:"https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",

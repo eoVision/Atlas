@@ -34,7 +34,7 @@ Cesium.knockout.track(viewModel);
 /////////////////////Januar
 var jan = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/01jan.png",
+    url: "Bilddateien/01jan.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -47,7 +47,7 @@ viewModel.layers.push(jan);
 /////////////////////Februar
 var feb = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/02feb.png",
+    url: "Bilddateien/02feb.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -60,7 +60,7 @@ viewModel.layers.push(feb);
 /////////////////////März
 var mar = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/03mar.png",
+    url: "Bilddateien/03mar.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -73,7 +73,7 @@ viewModel.layers.push(mar);
 /////////////////////April
 var apr = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/04apr.png",
+    url: "Bilddateien/04apr.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -87,7 +87,7 @@ viewModel.layers.push(apr);
 /////////////////////Mai
 var mai = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/05mai.png",
+    url: "Bilddateien/05mai.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -101,7 +101,7 @@ viewModel.layers.push(mai);
 /////////////////////Juni
 var juni = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/06juni.png",
+    url: "Bilddateien/06juni.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -115,7 +115,7 @@ viewModel.layers.push(juni);
 /////////////////////Juli
 var jul = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/07juli.png",
+    url: "Bilddateien/07juli.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -129,7 +129,7 @@ viewModel.layers.push(jul);
 /////////////////////August
 var aug = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/08aug.png",
+    url: "Bilddateien/08aug.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -143,7 +143,7 @@ viewModel.layers.push(aug);
 /////////////////////September
 var sep = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/09sep.png",
+    url: "Bilddateien/09sep.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -157,7 +157,7 @@ viewModel.layers.push(sep);
 /////////////////////Oktober
 var okt = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/10okt.png",
+    url: "Bilddateien/10okt.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -171,7 +171,7 @@ viewModel.layers.push(okt);
 /////////////////////November
 var nov = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/11nov.png",
+    url: "Bilddateien/11nov.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );
@@ -185,7 +185,7 @@ viewModel.layers.push(nov);
 /////////////////////Dezember
 var dez = imageryLayers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../ozon/12dez.png",
+    url: "Bilddateien/12dez.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 0.0),
   })
 );

@@ -6,16 +6,15 @@
     <!-- Tell IE to use the latest, best version. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
-    <title>Website</title>
-    <script src="../Cesium.js"></script>
-    <script src="../3dmarker.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+
+    <title>CESIUM in Webseite</title>
+
+    <script src="../CESIUMlibrary/Cesium.js"></script>
+    <script src="3dmarker.js"></script>
 
     <style>
-      @import url(../widgets.css);
+      @import url(../CESIUMlibrary/widgets.css);
       html, body {
         width: 100%;
         margin: 0;
@@ -24,14 +23,12 @@
       }
       #top{
         width: 100%;
-        /*height: 200px;*/
         background-color: blue;
         overflow-wrap: break-word;
         background-color: #d6c2c2;
       }
       #desc{
         width: 98%;
-        /*height: 200px;*/
         overflow-wrap: break-word;
         padding: 1%;
       }
@@ -40,7 +37,7 @@
         height: 500px;
         float: left;
       }
-      #cesiumContainer {
+      #cesiumContainer{
         width: 80%;
         height: 500px;
         margin: 0;

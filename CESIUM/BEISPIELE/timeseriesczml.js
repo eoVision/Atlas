@@ -29,51 +29,51 @@ function globus() {
             image: [
                               {
                                 interval: "2000-01-01T00:00:00Z/2000-02-01T00:00:00Z", //Zeitintervall wann dieses Bild sichtbar ist
-                                uri: "../ozon/01jan.png"
+                                uri: "Bilddateien/01jan.png"
                               },
                               {
                                 interval: "2000-02-01T00:00:00Z/2000-03-01T00:00:00Z",
-                                uri: "../ozon/02feb.png"
+                                uri: "Bilddateien/02feb.png"
                               },
                               {
                                 interval: "2000-03-01T00:00:00Z/2000-04-01T00:00:00Z",
-                                uri: "../ozon/03mar.png"
+                                uri: "Bilddateien/03mar.png"
                               },
                               {
                                 interval: "2000-04-01T00:00:00Z/2000-05-01T00:00:00Z",
-                                uri: "../ozon/04apr.png"
+                                uri: "Bilddateien/04apr.png"
                               },
                               {
                                 interval: "2000-05-01T00:00:00Z/2000-06-01T00:00:00Z",
-                                uri: "../ozon/05mai.png"
+                                uri: "Bilddateien/05mai.png"
                               },
                               {
                                 interval: "2000-06-01T00:00:00Z/2000-07-01T00:00:00Z",
-                                uri: "../ozon/06juni.png"
+                                uri: "Bilddateien/06juni.png"
                               },
                               {
                                 interval: "2000-07-01T00:00:00Z/2000-08-01T00:00:00Z",
-                                uri: "../ozon/07juli.png"
+                                uri: "Bilddateien/07juli.png"
                               },
                               {
                                 interval: "2000-08-01T00:00:00Z/2000-09-01T00:00:00Z",
-                                uri: "../ozon/08aug.png"
+                                uri: "Bilddateien/08aug.png"
                               },
                               {
                                 interval: "2000-09-01T00:00:00Z/2000-10-01T00:00:00Z",
-                                uri: "../ozon/09sep.png"
+                                uri: "Bilddateien/09sep.png"
                               },
                               {
                                 interval: "2000-10-01T00:00:00Z/2000-11-01T00:00:00Z",
-                                uri: "../ozon/10okt.png"
+                                uri: "Bilddateien/10okt.png"
                               },
                               {
                                 interval: "2000-11-01T00:00:00Z/2000-12-01T00:00:00Z",
-                                uri: "../ozon/11nov.png"
+                                uri: "Bilddateien/11nov.png"
                               },
                               {
                                 interval: "2000-12-01T00:00:00Z/2001-01-01T00:00:00Z",
-                                uri: "../ozon/12dez.png"
+                                uri: "Bilddateien/12dez.png"
                               },
                             ],
             color: {

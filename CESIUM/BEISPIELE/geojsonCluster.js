@@ -46,7 +46,7 @@ var handler;
 var handlerjson;
 
 //Polygone geojson
-var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/polygons.geojson")));
+var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/polygons.geojson")));
 
 polygons.then(function (dataSource){
   var entities = dataSource.entities.values;
@@ -59,13 +59,13 @@ polygons.then(function (dataSource){
 
 
 //centroids geojson
-alps = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/centroids.geojson"));
+alps = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/centroids.geojson"));
 
 alps.then(function (dataSource){
   var entities = dataSource.entities.values;
   for (var i = 0; i < entities.length; i++){
     var entity = entities[i];
-    entity.billboard.image =  "../clusterimages/pin.png";
+    entity.billboard.image =  "Bilddateien/pin.png";
     entity.billboard.scale = 0.08;
     entity.billboard.width = 100;
     entity.billnoard.height = 100;
@@ -107,23 +107,23 @@ function customStyle() {
         cluster.billboard.pixelOffset= new Cesium.Cartesian2(0.0,-32.0);
 
         if (clusteredEntities.length >= 10) {
-          cluster.billboard.image = "../clusterimages/009-neunplus.png";
+          cluster.billboard.image = "Bilddateien/009-neunplus.png";
         } else if (clusteredEntities.length >= 9) {
-          cluster.billboard.image = "../clusterimages/009-neun.png";
+          cluster.billboard.image = "Bilddateien/009-neun.png";
         } else if (clusteredEntities.length >= 8) {
-          cluster.billboard.image = "../clusterimages/008-acht.png";
+          cluster.billboard.image = "Bilddateien/008-acht.png";
         } else if (clusteredEntities.length >= 7) {
-          cluster.billboard.image = "../clusterimages/007-sieben.png";
+          cluster.billboard.image = "Bilddateien/007-sieben.png";
         } else if (clusteredEntities.length >= 6) {
-          cluster.billboard.image = "../clusterimages/006-sechs.png";
+          cluster.billboard.image = "Bilddateien/006-sechs.png";
         } else if (clusteredEntities.length >= 5) {
-          cluster.billboard.image = "../clusterimages/005-funf.png";
+          cluster.billboard.image = "Bilddateien/005-funf.png";
         } else if (clusteredEntities.length >= 4) {
-          cluster.billboard.image = "../clusterimages/004-vier.png";
+          cluster.billboard.image = "Bilddateien/004-vier.png";
         } else if (clusteredEntities.length >= 3) {
-          cluster.billboard.image = "../clusterimages/003-drei.png";
+          cluster.billboard.image = "Bilddateien/003-drei.png";
         } else {
-          cluster.billboard.image = "../clusterimages/002-zwei.png";
+          cluster.billboard.image = "Bilddateien/002-zwei.png";
         }
       }
     );

@@ -47,7 +47,7 @@ var scene = viewer.scene;
 var handler;
 
 //polygons
-var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/polygons.geojson", {
+var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/polygons.geojson", {
   stroke: Cesium.Color.INDIANRED,
   fill: Cesium.Color.INDIANRED .withAlpha(0.1),
 })));
@@ -65,13 +65,13 @@ polygons.then(function (dataSource){
 /////////////////
 
 //Centroids laden
-centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/centroids.geojson"));
+centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/centroids.geojson"));
 //Eigenschaften für jeden Punkt in "Centroids" anpassen
 centroids.then(function (dataSource){
   var entities = dataSource.entities.values;
   for (var i = 0; i < entities.length; i++){
     var entity = entities[i];
-    entity.billboard.image =  "../clusterimages/dot.png";
+    entity.billboard.image =  "../Bilddateien/dot.png";
     entity.billboard.scale = 0.00;
     entity.description = "<p>Dies ist eine Beschreibung, welche sich dynamisch aus den Attributen des jeweiligen GeoJSON-Objektes zusammensetzt.</p>\
     <p>Der Name dieses Gebiets ist: <b>" + entity.properties.name + "</b></p><p>Dieser <a target='_blank' href='" + entity.properties.link + "'>Link</a> wird ebenso aus der GeoJSON-Datei für jedes Objekt abgefragt.</p>";

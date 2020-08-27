@@ -28,14 +28,14 @@ var layers = viewer.imageryLayers;
 
 layers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../clusterimages/lightning_jan.png",
+    url: "Bilddateien/lightning_jan.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 90.0),
   })
 );
 
 var lightning_jul = layers.addImageryProvider(
   new Cesium.SingleTileImageryProvider({
-    url: "../clusterimages/lightning_jul.png",
+    url: "Bilddateien/lightning_jul.png",
     rectangle: Cesium.Rectangle.fromDegrees(-180.0, -90.0, 180.0, 90.0),
   })
 );

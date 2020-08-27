@@ -6,18 +6,17 @@
     <!-- Tell IE to use the latest, best version. -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+
     <title>GLOBUS</title>
+
     <!--link to JavaScript documents-->
-    <script src="../Cesium.js"></script>
-    <script src="../GLOBUS.js"></script>
-    <script src="../autocomplete.js"></script>
+    <script src="../CESIUMlibrary/Cesium.js"></script>
+    <script src="GLOBUS.js"></script>
+    <script src="autocomplete.js"></script>
     <style>
-      @import url(../widgets.css);
-      html,body,#cesiumContainer {
+      @import url(../CESIUMlibrary/widgets.css);
+      html, body, #cesiumContainer {
         width: 100%;
         height: 100%;
         margin: 0;
@@ -32,7 +31,7 @@
           position:absolute
       }
       .myInput {
-          background-image: url('../clusterimages/search.png'); /* Add a search icon to input */
+          background-image: url('Bilddateien/search.png'); /* Add a search icon to input */
           background-position: 10px 12px; /* Position the search icon */
           background-repeat: no-repeat; /* Do not repeat the icon image */
           background-size: 20px;

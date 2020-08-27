@@ -19,7 +19,7 @@ function  globus(){
 viewer._cesiumWidget._creditContainer.parentNode.removeChild(viewer._cesiumWidget._creditContainer);
 
 //Punktdaten-GeoJSON-Datei zur Karte hinzufügen
-var centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/centroids.geojson"));
+var centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("GeoJSON/centroids.geojson"));
 // zu allen Punkten eine Beschreibung und Label hinzufügen
 centroids.then(function (dataSource){
   var entities = dataSource.entities.values;
@@ -100,7 +100,6 @@ function textSearch() {
         //if not present
         if (name.toUpperCase().indexOf(searchQuery) != -1 || tags.toUpperCase().indexOf(searchQuery) != -1) {
           //entityCollectionArray[j].show = true;
-          //entityCollectionArray[j].billboard.image =  "../clusterimages/pin.png";
           //entityCollectionArray[j].billboard.scale =  0.08;
           entityCollectionArray[j].label.fillColor =  Cesium.Color.BLACK;
           treffer.push(entityCollectionArray[j]);

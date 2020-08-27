@@ -17,7 +17,7 @@ Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
 var imageryViewModels = [];
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Sentinel-2',
-iconUrl: Cesium.buildModuleUrl('clusterimages/sentinel_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/sentinel_icon.png'),
 //category: "test",
 creationFunction: function () {
 return new Cesium.UrlTemplateImageryProvider({
@@ -29,7 +29,7 @@ return new Cesium.UrlTemplateImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'OSM',
-iconUrl: Cesium.buildModuleUrl('clusterimages/osm_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/osm_icon.png'),
 creationFunction: function () {
 return new Cesium.OpenStreetMapImageryProvider({
     url:'//a.tile.openstreetmap.org/',
@@ -39,7 +39,7 @@ return new Cesium.OpenStreetMapImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Watercolor',
-iconUrl: Cesium.buildModuleUrl('clusterimages/watercolor_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/watercolor_icon.png'),
 creationFunction: function () {
 return new Cesium.OpenStreetMapImageryProvider({
     url: 'http://tile.stamen.com/watercolor',
@@ -49,7 +49,7 @@ return new Cesium.OpenStreetMapImageryProvider({
 
 imageryViewModels.push(new Cesium.ProviderViewModel({
 name: 'Natural Earth',
-iconUrl: Cesium.buildModuleUrl('clusterimages/esri_icon.png'),
+iconUrl: Cesium.buildModuleUrl('../BEISPIELE/Bilddateien/esri_icon.png'),
 creationFunction: function () {
 return new Cesium.ArcGisMapServerImageryProvider({
     url:"https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
@@ -100,7 +100,7 @@ var zoomset2 = entities.add(new Cesium.Entity());
 zoomset2.show = false;
 
 //Gebietspolygone zur Karte hinzufügen
-var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/polygonsEN.geojson", {
+var polygons = viewer.entities.add(viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/polygonsEN.geojson", {
   stroke: Cesium.Color.WHITE,
   fill: Cesium.Color.WHITE.withAlpha(0.1),
 })));
@@ -117,7 +117,7 @@ polygons.then(function (dataSource){
 });
 
 //Centroids (Mittelpunkte der Polygone) laden
-centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("../bbox/centroidsEN.geojson"));
+centroids = viewer.dataSources.add(Cesium.GeoJsonDataSource.load("geoJSON/centroidsEN.geojson"));
 //Eigenschaften für jeden Punkt in "Centroids" anpassen. Label, Beschreibung und Zoomset hinzufügen
 centroids.then(function (dataSource){
   var entities = dataSource.entities.values;
@@ -125,7 +125,7 @@ centroids.then(function (dataSource){
     var entity = entities[i];
     entity.parent= zoomset1, //zum Zoomset hinzufügen
     //Symbol
-    entity.billboard.image =  "../clusterimages/pin.png";
+    entity.billboard.image =  "Bilddateien/pin.png";
     entity.billboard.height = 30;//benötigt, damit am Anfang automatisch geclustered wird, bug
     entity.billboard.width = 30;//same
     //Label
@@ -169,23 +169,23 @@ centroids.then(function (dataSource){
           cluster.billboard.pixelOffset= new Cesium.Cartesian2(0.0,-20.0);
           //Aussehen nach Anzahl der Punkte
           if (clusteredEntities.length >= 10) {
-            cluster.billboard.image = "../clusterimages/009-neunplus.png";
+            cluster.billboard.image = "Bilddateien/009-neunplus.png";
           } else if (clusteredEntities.length >= 9) {
-            cluster.billboard.image = "../clusterimages/009-neun.png";
+            cluster.billboard.image = "Bilddateien/009-neun.png";
           } else if (clusteredEntities.length >= 8) {
-            cluster.billboard.image = "../clusterimages/008-acht.png";
+            cluster.billboard.image = "Bilddateien/008-acht.png";
           } else if (clusteredEntities.length >= 7) {
-            cluster.billboard.image = "../clusterimages/007-sieben.png";
+            cluster.billboard.image = "Bilddateien/007-sieben.png";
           } else if (clusteredEntities.length >= 6) {
-            cluster.billboard.image = "../clusterimages/006-sechs.png";
+            cluster.billboard.image = "Bilddateien/006-sechs.png";
           } else if (clusteredEntities.length >= 5) {
-            cluster.billboard.image = "../clusterimages/005-funf.png";
+            cluster.billboard.image = "Bilddateien/005-funf.png";
           } else if (clusteredEntities.length >= 4) {
-            cluster.billboard.image = "../clusterimages/004-vier.png";
+            cluster.billboard.image = "Bilddateien/004-vier.png";
           } else if (clusteredEntities.length >= 3) {
-            cluster.billboard.image = "../clusterimages/003-drei.png";
+            cluster.billboard.image = "Bilddateien/003-drei.png";
           } else {
-            cluster.billboard.image = "../clusterimages/002-zwei.png";
+            cluster.billboard.image = "Bilddateien/002-zwei.png";
           }
         }
       );

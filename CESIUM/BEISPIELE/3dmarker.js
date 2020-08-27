@@ -74,7 +74,7 @@ rectangle3.linkForPick = '../../OpenLayers/B2_QGIS2Web_Timeline_LasVegas/index.h
 var map_pin = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(100, 20, 0.0),
     model:{
-      uri: "../3D/map_pin/scene.gltf",
+      uri: "3DSymbole/map_pin/scene.gltf",
       minimumPixelSize: 128,
       maximumScale: 1000000,
     },
@@ -93,7 +93,7 @@ var pin_free = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(12.329, 48.146, -60000.0),
     orientation: Cesium.Transforms.headingPitchRollQuaternion(Cesium.Cartesian3.fromDegrees(12.329, 48.146, -60000.0), new Cesium.HeadingPitchRoll(180,0,0)),
     model:{
-      uri: "../3D/pin_free_model/scene.gltf",
+      uri: "3DSymbole/pin_free_model/scene.gltf",
       minimumPixelSize: 128,
       maximumScale: 200000,
     },
@@ -111,7 +111,7 @@ pin_free.linkForPick = 'https://www.google.de';
 var lowpoly_pin = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(180, 20, 10000.0),
     model:{
-      uri: "../3D/lowpoly_pin/scene.gltf",
+      uri: "3DSymbole/lowpoly_pin/scene.gltf",
       minimumPixelSize: 128,
       maximumScale: 200000,
     },
@@ -121,7 +121,7 @@ lowpoly_pin.linkForPick = 'https://www.google.de';
 var flag = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(-90, 20, 10000.0),
     model:{
-      uri: "../3D/flag_in_the_wind/scene.gltf",
+      uri: "3DSymbole/flag_in_the_wind/scene.gltf",
       minimumPixelSize: 128,
       maximumScale: 200000,
     },
@@ -131,7 +131,7 @@ flag.linkForPick = 'https://www.google.de';
 var map_pin_a = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(-90, 0, 0.0),
     model:{
-      uri: "../3D/map_pin_animation/scene.gltf",
+      uri: "3DSymbole/map_pin_animation/scene.gltf",
       minimumPixelSize: 128,
       maximumScale: 60000,
     },
@@ -182,7 +182,7 @@ var rio = viewer.entities.add({
 
 
 
-//link-handler for polygons, planes, 3d models, points etc.
+//link-handler for polygons, planes, 3D models, points etc.
 viewer.screenSpaceEventHandler.setInputAction(function(mouse) {
         var pickedObject = viewer.scene.pick(mouse.position);
         if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id.linkForPick)) {

@@ -10,12 +10,12 @@
 
     <title>Geocoder</title>
 
-    <script src="../Cesium.js"></script>
-    <script src="../geocoder.js"></script>
-    <script src="../autocomplete.js"></script>
+    <script src="../CESIUMlibrary/Cesium.js"></script>
+    <script src="geocoder.js"></script>
+    <script src="autocomplete.js"></script>
 
     <style>
-      @import url(../widgets.css);
+      @import url(../CESIUMlibrary/widgets.css);
       html, body, #cesiumContainer {
         width: 100%;
         height: 100%;
@@ -32,7 +32,7 @@
       }
       /*_______________________SEARCHBOX____________*/
       .myInput {
-          background-image: url('../clusterimages/search.png'); /* Add a search icon to input */
+          background-image: url('Bilddateien/search.png'); /* Add a search icon to input */
           background-position: 10px 12px; /* Position the search icon */
           background-repeat: no-repeat; /* Do not repeat the icon image */
           background-size: 20px;
@@ -44,7 +44,7 @@
           border-radius: 10px 0px 0px 10px;
         }
 
-          /* AUTOCOMPLETE____https://www.w3schools.com/howto/howto_js_autocomplete.asp___________________________________________*/
+          /* AUTOCOMPLETE____ Quelle: https://www.w3schools.com/howto/howto_js_autocomplete.asp ___________________________________________*/
           .autocomplete {
             /*the container must be positioned relative:*/
             position: relative;
