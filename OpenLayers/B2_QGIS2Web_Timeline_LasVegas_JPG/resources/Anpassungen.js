@@ -1,13 +1,14 @@
+// gleiches Beispiel wie B2_QGIS2Web_Timeline_LasVegas, lediglich mit anderen verlinkten Bildern (JPG statt PNG)
 
-//Der Array "layersList" wird vom Plugin QGIS2web automatisch erstellt und enthält alle Layer des Projektes.
-//Es wird auf die Satellitenbilder im Array zugegriffen und jedem Bild ein Zeitstempel ".time" hinzugefügt.
+//Der Array "layersList" wird vom Plugin QGIS2web automatisch erstellt und enthÃ¤lt alle Layer des Projektes.
+//Es wird auf die Satellitenbilder im Array zugegriffen und jedem Bild ein Zeitstempel ".time" hinzugefï¿½gt.
 //Dieser Zeitstempel ist in Millisekunden angegeben, z.B. 518392800000 = 5. Juni 1986  ,folgende Webseite kann ein Datum in Millisekunden umwandeln: https://currentmillis.com/
-//Die Angabe in Millisekunden wird benötigt um zu bestimmen zu welchem Zeitpunkt auf dem Zeitstrahl diese eingeblendet werden.
+//Die Angabe in Millisekunden wird benÃ¶tigt um zu bestimmen zu welchem Zeitpunkt auf dem Zeitstrahl diese eingeblendet werden.
 
-//LayerList[0] ist die OSM Basemap und benötigt keinen Zeitstempel
+//LayerList[0] ist die OSM Basemap und benï¿½tigt keinen Zeitstempel
  layersList[0].desc = "OpenStreetMap";
  //jedem Satellitenbild der Zeitreihe wird ein Datum zugewiesen(manuell)
- layersList[1].time = 518392800000; 	//layersList[1].desc = 1986; 
+ layersList[1].time = 518392800000; 	//layersList[1].desc = 1986;
  layersList[2].time = 959378400000; 	//layersList[2].desc = 2000;
  layersList[3].time = 992556000000; 	//layersList[3].desc = 2001;
  layersList[4].time = 1024351200000; 	//layersList[4].desc = 2002;
@@ -41,9 +42,9 @@
  layersList[32].time = 1560722400000; 	//layersList[32].desc = 2019;
  layersList[33].time = 1592517600000; 	//layersList[33].desc = 2020;
  layersList[34].time = 1593900000000; 	//layersList[34].desc = 2021;
- 
+
 //Hier wird die Timeline definiert:
-// Create Timeline control 
+// Create Timeline control
   var tline = new ol.control.Timeline({
     className: 'ol-pointer',
     features: [{
@@ -71,7 +72,7 @@
     	go();
     }
   });
-  
+
   //Einstellungen wann welches Bild angezeigt wird
  // Show features on scroll
   tline.on('scroll', function(e){
@@ -91,7 +92,7 @@
 	});
   });
 
-  
+
   // Run on the timeline
   var running = false;
   var start = new Date('1987');
@@ -117,7 +118,7 @@
     if (date < start) {
       date = start;
     }
-    // Zeitschritte der Animation 
+    // Zeitschritte der Animation
     date = new Date(date.getTime() + 31670000000 );
     tline.setDate(date, { anim:false });
     // Geschwindigkeit der Animation
