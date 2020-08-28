@@ -18,10 +18,4 @@ function globus() {
 
   viewer.scene.globe.enableLighting = true;
 
-
-
-
-
-
-
 };
