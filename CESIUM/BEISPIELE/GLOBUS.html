@@ -121,17 +121,17 @@
       </div>
       <div>
         <input type="checkbox" name"Afrika" id="AfrikaFilter" onclick="Filter('Afrika', 'AfrikaFilter')"><label for="AfrikaFilter">Afrika</label>
-        <input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Beispiele</label>
+        <input type="checkbox" name"OpenLayersBeispiel" id="OLFilter" onclick="Filter('Beispiel', 'OLFilter')"><label for="OLFilter">OpenLayers Beispiele</label><!-- hier: Suchbegriff ist BEISPIEL-->
       </div>
     </div>
     <!-- Suchfeld-->
     <div id="textSearch">
-      <form action="javascript:textSearch()" class="textbox" autocomplete="off">
+      <form action="javascript:textSearch()" class="textbox" autocomplete="off"> <!-- autocomplete off, dies ist eine andere Funktion die hier störend wäre-->
         <div class="autocomplete" style="width:120px; float:left">
           <input id="searchQuery" type="text" name="myCountry" class="myInput" class="textbox" type="text" value="" placeholder="Stichwortsuche">
         </div>
         <div style="width:300px; float:left; margin-left:45px">
-          <input id="button1" type="submit" value="suchen">
+          <input id="SucheButton" type="submit" value="suchen">
         </div>
       </form>
     </div>
@@ -142,15 +142,15 @@
       //Main Script
       globus();
       var input = document.getElementById("searchQuery");
-      //Timeout, da callback nicht geklappt hat
-      setTimeout(function() { gettags(); }, 1000);
-      setTimeout(function() { autocomplete(document.getElementById("searchQuery"), uniquetags); }, 2000);
+      //Reihenfolge wichtig: Timeout, da callback nicht geklappt hat
+      setTimeout(function() { gettags(); }, 1000); //tags auslesen
+      setTimeout(function() { autocomplete(document.getElementById("searchQuery"), uniquetags); }, 2000); //autocomplete-Liste erstellen
 
       //Enter führt Suche aus
       input.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
             event.preventDefault();
-            document.getElementById("button1").click();
+            document.getElementById("SucheButton").click();
           }
       });
     </script>

@@ -79,29 +79,33 @@
 
     </div>
     <div class = "cesium-viewer-toolbar" id="playback-controls">
-    <div>
-      <div id="showYear"><p><b>Monat</b></p></div>
-      <div class="cesium-button time-control">
-        <a id="pb-reset"  title="Restart"><span class="glyphicon glyphicon-refresh"></span></a>
+    <!--Zeitcontrolls-->
+      <div>
+        <!-- Monatsanzeige -->
+        <div id="showYear"><p><b>Monat</b></p></div>
+        <!-- Restart buttton -->
+        <div class="cesium-button time-control">
+          <a id="pb-reset"  title="Restart"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <!-- Start/Stop buttton -->
+        <div class="cesium-button time-control">
+          <a id="pb-play" title="Play/Pause"><span class="glyphicon glyphicon-play"></span></a>
+        </div>
+        <!-- Geschwindigkeit reduzieren buttton -->
+        <div class="cesium-button time-control">
+          <a id="pb-slow" title="Langsamer"><span class="glyphicon glyphicon-step-forward"></span></a>
+        </div>
+        <!-- Geschwindigkeit erhöhen buttton -->
+        <div class="cesium-button time-control">
+          <a id="pb-fast" title="Schneller"><span class="glyphicon glyphicon-fast-forward"></span></a>
+        </div>
       </div>
-      <div class="cesium-button time-control">
-        <a id="pb-play" title="Play/Pause"><span class="glyphicon glyphicon-play"></span></a>
-      </div>
-      <div class="cesium-button time-control">
-        <a id="pb-slow" title="Langsamer"><span class="glyphicon glyphicon-step-forward"></span></a>
-      </div>
-      <div class="cesium-button time-control">
-        <a id="pb-fast" title="Schneller"><span class="glyphicon glyphicon-fast-forward"></span></a>
-      </div>
-
     </div>
-    </div>
-      <img src="Bilddateien/160_03a-3m_leg_DE.jpg" alt="legende" style=" position:absolute; top:45px; width: 220px; right: 8px">
+    <!-- Legende -->
+    <img src="Bilddateien/160_03a-3m_leg_DE.jpg" alt="legende" style=" position:absolute; top:45px; width: 220px; right: 8px">
 
     <script>
       globus();
-
-
     </script>
   </body>
 </html>

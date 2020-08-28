@@ -1,23 +1,22 @@
 
-
 function globus() {
 
-
+//CZML Datei erstellen mit den Bildern der Zeitreihe und den zugehörigen Anzeigeintervallen
   var czml = [
     {
       id: "document",
       name: "Ozon",
       version: "1.0",
-      clock: {
-        interval: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z", //Zeitstrahl Interval
-        currentTime: "2000-01-01T00:00:00Z", //Startzeit
-        multiplier: 1300000, //Geschwindigkeit
-    },
+        clock: {
+          interval: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z", //Zeitstrahl Interval
+          currentTime: "2000-01-01T00:00:00Z", //Startzeit
+          multiplier: 1300000, //Geschwindigkeit
+        },
     },
     {
-      id: "textureRectangle",
+      id: "Ozon",
       name: "Ozon",
-      availability: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z",
+      availability: "2000-01-01T00:00:00Z/2001-01-01T00:00:00Z", //Zeitintervall der gesammten Zeitreihe
       rectangle: {
         coordinates: {
           wsenDegrees: [-180.0, -90.0, 180.0, 0.0], //Bilddimensionen
@@ -85,12 +84,13 @@ function globus() {
     },
   ];
 
+//Cesium-Viewer erstellen
   var viewer = new Cesium.Viewer("cesiumContainer",{
     imageryProvider: new Cesium.TileMapServiceImageryProvider({
-      url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"),
+      url: Cesium.buildModuleUrl("Assets/Textures/NaturalEarthII"), //Basemap
     }),
     fullscreenButton: false,
-    timeline: true,
+    timeline: true, //Zeitstrahl aktiviert
     animation: false,
     infoBox: false,
     navigationInstructionsInitiallyVisible: false,
@@ -104,22 +104,24 @@ function globus() {
     skyAtmosphere: false,
     shouldAnimate: true,
   });
+
+  //Zuvor erstellte CZML-Datei wird zur Szene hinzugefügt
   var dataSourcePromise = Cesium.CzmlDataSource.load(czml);
   viewer.dataSources.add(dataSourcePromise);
   viewer.zoomTo(dataSourcePromise);
 
-  // Darstellung
+  // Darstellung minimieren, da sich diese Objekte sonst zu schnell drehen würden
   var scene = viewer.scene;
-  scene.skyBox.show = false;
-  scene.sun.show = false;
-  scene.moon.show = false;
+  scene.skyBox.show = false; //keine Sterne im Hintergrund
+  scene.sun.show = false; //keine Sonne
+  scene.moon.show = false; //kein Mond
   //scene.skyAtmosphere.show = false;
   //viewer.scene.skyBox.show = false;
-  scene.backgroundColor = Cesium.Color.BLACK;
-  viewer.scene.globe.baseColor = Cesium.Color.BLACK;
+  scene.backgroundColor = Cesium.Color.BLACK; //Hintergrundfarbe
+  viewer.scene.globe.baseColor = Cesium.Color.BLACK; //Globusfarbe
 
 
-
+//Zeitfunktionalitäten hinzufügen
   var clockViewModel;
   var animationViewModel;
   clockViewModel = new Cesium.ClockViewModel(viewer.clock);
@@ -130,38 +132,40 @@ function globus() {
       return gregorianDate.day+"/"+gregorianDate.month +"/"+gregorianDate.year;
     };
 
-  viewer.clock.shouldAnimate = false;
+  viewer.clock.shouldAnimate = false; //Animation ist am Anfang gestoppt
 
+//Funktionen der Buttons festlegen
 var factor = 1;
   $("#pb-play").click(function(){
     animationViewModel.pauseViewModel.command();
-    $("#pb-play span").toggleClass("glyphicon-pause glyphicon-play");
+    $("#pb-play span").toggleClass("glyphicon-pause glyphicon-play"); //Bei Play wird ein Pause-Button angezeigt
   })
 
   $("#pb-reset").click(function(){
     clockViewModel.currentTime = clockViewModel.startTime;
-    factor = 1;
+    factor = 1; //Geschwindigkeitsfaktor zurücksetzen
     clockViewModel.multiplier = 1300000; //standard speed
   })
 
   $("#pb-slow").click(function(){
     factor = factor + 0.5;
-    clockViewModel.multiplier = clockViewModel.multiplier / factor;
+    clockViewModel.multiplier = clockViewModel.multiplier / factor; //Geschwindigkeit halbieren
   })
 
   $("#pb-fast").click(function(){
     factor = factor + 0.5;
-    clockViewModel.multiplier = factor * clockViewModel.multiplier;
+    clockViewModel.multiplier = factor * clockViewModel.multiplier; //Geschwindigkeit verdoppeln
   })
 
+//Liste der Monate welche Angezeigt werden können
   const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni","Juli", "August", "September", "Oktober", "November", "Dezember"];
 
+//Bei jedem Tick der Zeit wird die aktuelle Zeit ausgelesen
   viewer.clock.onTick.addEventListener(function(event) {
-    var jd = event.currentTime.dayNumber;
-    var millis = (jd - 2440587.5) * 86400000;
-    var dateLocal = new Date(millis);
-    //month = dateLocal.getMonth();
-    document.getElementById("showYear").innerHTML = monthNames[dateLocal.getMonth()];
+    var jd = event.currentTime.dayNumber; //Tag-Nummer
+    var millis = (jd - 2440587.5) * 86400000; //Umwandlung der Tag-Nummer in Millisekunden
+    var dateLocal = new Date(millis); //Datum aus Millisekunden erstellen
+    document.getElementById("showYear").innerHTML = monthNames[dateLocal.getMonth()]; //den monat des Datums auslesen un den ensprechenden Monat aus dem Array in der Aneige anzeigen
   });
 
 

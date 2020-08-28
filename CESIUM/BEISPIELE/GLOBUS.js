@@ -1,4 +1,4 @@
-//ANMERKUNG: Damit die in den Inforboxen enthaltenen Links funktionieren muss eine Änderung in der Cesium.js-Datei getätigt werden.
+//ANMERKUNG: Damit die in den Infoboxen enthaltenen Links funktionieren muss eine Änderung in der Cesium.js-Datei getätigt werden.
 //Folgende Code-Passage muss gelöscht werden, damit Skripte in der über den Link augerufenen Seite ausgeführt werden dürfen und die Seiten somit richtig funktionieren:
 // c.setAttribute(“sandbox”, “allow-same-origin allow-popups allow-forms”),
 
@@ -161,15 +161,16 @@ centroids.then(function (dataSource){
     } else {
       removeListener = dataSource.clustering.clusterEvent.addEventListener(
         function (clusteredEntities, cluster) {
+          //die Cluster werden nicht als Textlabel sondern als Bild angezeigt
           cluster.label.show = false;
           cluster.billboard.show = true;
           cluster.billboard.id = cluster.label.id;
-          cluster.billboard.scale = 0.5;
+          cluster.billboard.scale = 0.5; //Größe
           cluster.billboard.verticalOrigin = Cesium.VerticalOrigin.CENTER;
           cluster.billboard.pixelOffset= new Cesium.Cartesian2(0.0,-20.0);
           //Aussehen nach Anzahl der Punkte
           if (clusteredEntities.length >= 10) {
-            cluster.billboard.image = "Bilddateien/009-neunplus.png";
+            cluster.billboard.image = "Bilddateien/009-neunplus.png"; //bei mehr als 9 Objekten im Cluster
           } else if (clusteredEntities.length >= 9) {
             cluster.billboard.image = "Bilddateien/009-neun.png";
           } else if (clusteredEntities.length >= 8) {
@@ -199,7 +200,7 @@ centroids.then(function (dataSource){
 customStyle();
 });
 
-// If the mouse is over object, change cursor
+// Wenn der Muaszeiger über einem anklickbaren Objekt ist, dann Cursor ändern
 handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handler.setInputAction(function(movement) {
     var pickedObject = scene.pick(movement.endPosition);
@@ -216,7 +217,7 @@ var handlerjson;
 handlerjson = new Cesium.ScreenSpaceEventHandler(scene.canvas);
 handlerjson.setInputAction(function(ss) {
     var pickedObject = viewer.scene.pick(ss.position);
-    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { //if object is a cluster
+    if (Cesium.defined(pickedObject) && Array.isArray(pickedObject.id)) { //if object is a cluster (array)
       viewer.flyTo(pickedObject.id, {
       offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-90), 0),
     });
