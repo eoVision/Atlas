@@ -32,13 +32,13 @@ var element = document.getElementById('cesiumContainer');
 var scene = viewer.scene;
 var handler;
 
-//__RECTANGLES_ENTITIES__________________________________________________________
 
+//__RECTANGLES werden erstellt und zu der Szene hinzugefügt__________________________________________________________
 var alps_rectangle = viewer.entities.add({
   rectangle: {
-    coordinates: Cesium.Rectangle.fromDegrees(5.623442313,45.41767801,13.671979258,48.295864634), //west(-180;180),south(-90;90),east(-180;180),north(-90;90)
-    fill:true,
-    material: Cesium.Color.RED.withAlpha(0.5), //rot mit Transparenz
+    coordinates: Cesium.Rectangle.fromDegrees(5.623442313,45.41767801,13.671979258,48.295864634), //Dimensionen des Polygons
+    fill:true, //Füllung
+    material: Cesium.Color.RED.withAlpha(0.5), //Farbe: rot mit Transparenz
   },
 });
 alps_rectangle.linkForPick = '../../OpenLayers/B5_QGIS2Web_SwipeBar_Alps/index.html'; //link bei Klick
@@ -70,7 +70,7 @@ var rectangle3 = viewer.entities.add({
 rectangle3.linkForPick = '../../OpenLayers/B2_QGIS2Web_Timeline_LasVegas/index.html';
 
 
-//___3D Models________________________________________________________
+//___verschiedene 3D-Modelle werden als Punktmarkierungen verwendet________________________________________________________
 var map_pin = viewer.entities.add({
     position: Cesium.Cartesian3.fromDegrees(100, 20, 0.0),
     model:{
@@ -140,7 +140,7 @@ map_pin_a.linkForPick = 'https://www.google.de';
 
 
 //_____________________________________________________________
-////Point
+////PUNKT MIT LABEL
 var rio = viewer.entities.add({
         position : Cesium.Cartesian3.fromDegrees(-43.1729,-22.9068),
         point : {
@@ -158,9 +158,9 @@ var rio = viewer.entities.add({
             pixelOffset : new Cesium.Cartesian2(0, -9)
         }
     });
-    rio.linkForPick = 'https://google.de';
+    rio.linkForPick = 'https://google.de'; //LINK
 
-    ////Point
+    ////PUNKT MIT LABEL
     var bra = viewer.entities.add({
             position : Cesium.Cartesian3.fromDegrees(-47.850,-15.838),
             point : {
@@ -178,11 +178,11 @@ var rio = viewer.entities.add({
                 pixelOffset : new Cesium.Cartesian2(0, -9)
             }
         });
-        bra.linkForPick = 'https://google.de';
+        bra.linkForPick = 'https://google.de'; //LINK
 
 
 
-//link-handler for polygons, planes, 3D models, points etc.
+//Bei Klick auf ein Objekt mit hinterlegtem Link wird dieser geöffnet
 viewer.screenSpaceEventHandler.setInputAction(function(mouse) {
         var pickedObject = viewer.scene.pick(mouse.position);
         if (Cesium.defined(pickedObject) && Cesium.defined(pickedObject.id.linkForPick)) {
